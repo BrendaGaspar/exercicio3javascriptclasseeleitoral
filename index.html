@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Sistema de Verificação de Votação </h1>
+    <hr>
+    <form action="">
+        Digite a Sua Idade:<br />
+        <input type="text" name="" id="idade" />
+        <br /><br />
+        <button onclick="calcular();return false;">Verificar</button>
+        <br /><br />
+        <div id="resposta"></div>
+    </form>
+</body>
+
+</html>
+
+<script>
+     function calcular() {
+        var idade = parseInt(document.getElementById("idade").value);
+
+    if (idade < 16) {
+        var respostaj ="Você é Menor de Idade, Você tem " + idade + " anos, não eleitor";
+        resposta.innerHTML = respostaj;
+    }
+    else if ((idade >= 18) && (idade <= 65)) {
+        var respostaj = "Você tem " +idade+ " anos, Eleitor Obrigatório";
+        resposta.innerHTML = respostaj;
+    }
+    else if ((idade >= 16) && (idade < 18)) {
+        var respostaj = "Você tem " +idade+ " anos, Eleitor Facultativo";
+        resposta.innerHTML = respostaj;
+    }else if(idade > 65){
+        var respostaj = "Você tem " +idade+ " anos, Eleitor Facultativo";
+        resposta.innerHTML = respostaj;
+    }
+
+}
+
+</script>
